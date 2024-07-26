@@ -13,7 +13,7 @@
         }
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #3c2a1f, #5a3e2c, #7a5e3b);
+            background: linear-gradient(135deg, #3e2723, #4e342e, #6d4c41);
             color: #fff;
             text-align: center;
         }
@@ -23,7 +23,8 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: #3c2a1f;
+            background: rgba(44, 27, 22, 0.6); /* Semi-transparent background */
+            backdrop-filter: blur(10px); /* Glass effect */
             color: #fff;
             animation: fadeIn 3s ease-in-out;
         }
@@ -32,24 +33,18 @@
             margin: 0;
             animation: titleAnimation 2s ease-in-out;
         }
-        .pull-down {
+        .welcome-section p {
             font-size: 1.2em;
-            margin-top: 20px;
-            color: #d7a15b;
-            cursor: pointer;
-            animation: bounce 2s infinite;
-        }
-        .pull-down img {
-            width: 50px;
-            margin-top: 10px;
+            margin: 20px 0;
+            color: #d7a86e;
         }
         .main-content {
             display: none;
             padding: 20px;
-            background: #5a3e2c;
+            background: #3e2723;
         }
         header {
-            background: #4b2c1c;
+            background: rgba(43, 20, 15, 0.8);
             color: #fff;
             padding: 20px 0;
             min-height: 70px;
@@ -60,14 +55,14 @@
             flex-wrap: wrap;
         }
         header a {
-            color: #d7a15b;
+            color: #f5c6a0;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 16px;
             transition: color 0.3s ease-in-out;
         }
         header a:hover {
-            color: #f2d9b1;
+            color: #f8e5e0;
         }
         header ul {
             padding: 0;
@@ -89,7 +84,7 @@
         }
         section h2 {
             font-size: 2.5em;
-            color: #f2d9b1;
+            color: #f8e5e0;
             animation: fadeInUp 2s ease-in-out;
         }
         section p {
@@ -101,18 +96,18 @@
             margin: 20px 0;
         }
         .socials a {
-            color: #d7a15b;
+            color: #f5c6a0;
             text-decoration: none;
             margin: 0 15px;
             font-size: 30px;
             transition: transform 0.3s ease-in-out;
         }
         .socials a:hover {
-            color: #f2d9b1;
+            color: #f8e5e0;
             transform: scale(1.2);
         }
         footer {
-            background: #4b2c1c;
+            background: rgba(43, 20, 15, 0.8);
             color: #fff;
             text-align: center;
             padding: 30px 0;
@@ -177,10 +172,7 @@
 <body>
     <div class="welcome-section">
         <h1>Welcome to DBS</h1>
-        <div class="pull-down" onclick="showMainContent()">
-            <span>Pull This</span>
-            <img src="https://img.icons8.com/ios-filled/50/ffd700/down.png" alt="Pull Down">
-        </div>
+        <p>Explore and enjoy the tech world!</p>
     </div>
     <div class="main-content">
         <header>
@@ -218,4 +210,19 @@
         <section>
             <h2>Socials</h2>
             <div class="socials">
-                <a href="https://www
+                <a href="https://www.instagram.com/dbs_shuhaib/"><img src="https://img.icons8.com/fluency/48/000000/instagram-new.png" alt="Instagram"></a>
+            </div>
+        </section>
+        <footer>
+            <p>DBS &copy; 2024</p>
+        </footer>
+    </div>
+    <script>
+        window.onload = function() {
+            document.querySelector('.welcome-section').style.display = 'none';
+            document.querySelector('.main-content').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+
