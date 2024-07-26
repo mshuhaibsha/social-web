@@ -6,12 +6,12 @@
     <title>DBS</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #000;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #000000, #434343);
             color: #fff;
             margin: 0;
             padding: 0;
-            animation: fadeIn 2s ease-in-out;
+            animation: fadeIn 3s ease-in-out;
         }
         .container {
             width: 80%;
@@ -19,34 +19,68 @@
             overflow: hidden;
         }
         header {
-            background: #ff9800;
+            background: linear-gradient(90deg, #ff9800, #ff5722);
             color: #fff;
-            padding-top: 30px;
+            padding: 30px 0;
             min-height: 70px;
             border-bottom: #333 3px solid;
-            animation: slideIn 1s ease-in-out;
+            animation: slideIn 2s ease-in-out;
         }
         header a {
             color: #fff;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 16px;
+            transition: color 0.3s ease-in-out;
+        }
+        header a:hover {
+            color: #ffd54f;
         }
         header ul {
             padding: 0;
             list-style: none;
+            margin: 0;
         }
         header li {
             float: right;
             display: inline;
-            padding: 0 20px 0 20px;
+            padding: 0 20px;
         }
         header #branding {
             float: left;
         }
         header #branding h1 {
             margin: 0;
-            animation: titleAnimation 1.5s ease-in-out;
+            font-size: 3em;
+            animation: titleAnimation 2s ease-in-out;
+        }
+        section {
+            padding: 40px 0;
+            text-align: center;
+        }
+        section h2 {
+            font-size: 2.5em;
+            color: #ff5722;
+            animation: fadeInUp 2s ease-in-out;
+        }
+        section p {
+            font-size: 1.2em;
+            color: #fff;
+            animation: fadeInUp 2s 0.5s ease-in-out;
+        }
+        .socials {
+            margin: 20px 0;
+        }
+        .socials a {
+            color: #ff9800;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 30px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .socials a:hover {
+            color: #ffd54f;
+            transform: scale(1.2);
         }
         footer {
             background: #333;
@@ -54,13 +88,8 @@
             text-align: center;
             padding: 30px 0;
             margin-top: 30px;
-        }
-        .socials a {
-            color: #ff9800;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 24px;
-            animation: fadeIn 2s ease-in-out;
+            position: relative;
+            z-index: 1;
         }
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -73,6 +102,10 @@
         @keyframes titleAnimation {
             0% { transform: scale(0.5); opacity: 0; }
             100% { transform: scale(1); opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
@@ -105,3 +138,4 @@
     </footer>
 </body>
 </html>
+
