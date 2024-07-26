@@ -10,12 +10,10 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-        }
-        body {
-            font-family: 'Roboto', sans-serif;
+            height: 100%;
             background: linear-gradient(135deg, #3e2723, #4e342e, #6d4c41);
             color: #fff;
-            text-align: center;
+            font-family: 'Roboto', sans-serif;
         }
         .welcome-section {
             height: 100vh;
@@ -23,46 +21,59 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: rgba(44, 27, 22, 0.6); /* Semi-transparent background */
-            backdrop-filter: blur(10px); /* Glass effect */
+            background: rgba(44, 27, 22, 0.6); /* Slightly darker glass effect */
+            backdrop-filter: blur(25px); /* Enhanced glass effect */
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
             color: #fff;
+            text-align: center;
             animation: fadeIn 3s ease-in-out;
         }
         .welcome-section h1 {
-            font-size: 3em;
+            font-size: 4em;
             margin: 0;
-            animation: titleAnimation 2s ease-in-out;
+            animation: zoomIn 2s ease-in-out;
         }
         .welcome-section p {
-            font-size: 1.2em;
+            font-size: 1.8em;
             margin: 20px 0;
             color: #d7a86e;
+            animation: fadeIn 2s 0.5s ease-in-out;
         }
         .main-content {
             display: none;
             padding: 20px;
-            background: #3e2723;
+            background: rgba(62, 39, 35, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            animation: fadeInUp 2s ease-in-out;
         }
         header {
             background: rgba(43, 20, 15, 0.8);
             color: #fff;
-            padding: 20px 0;
+            padding: 20px;
+            border-radius: 20px;
             min-height: 70px;
             animation: slideIn 2s ease-in-out;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            border-bottom: 2px solid #f5c6a0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         header a {
             color: #f5c6a0;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 16px;
-            transition: color 0.3s ease-in-out;
+            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            animation: bounceIn 1s ease-in-out;
         }
         header a:hover {
             color: #f8e5e0;
+            transform: scale(1.1);
         }
         header ul {
             padding: 0;
@@ -72,20 +83,25 @@
             gap: 20px;
         }
         header #branding {
-            font-size: 2em;
+            font-size: 2.5em;
             font-weight: 700;
             margin-left: 20px;
+            animation: rotateIn 2s ease-in-out;
         }
         header nav {
             margin-right: 20px;
         }
         section {
-            padding: 40px 0;
+            padding: 40px 20px;
         }
         section h2 {
             font-size: 2.5em;
             color: #f8e5e0;
             animation: fadeInUp 2s ease-in-out;
+            border-bottom: 2px solid #f5c6a0;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: inline-block;
         }
         section p {
             font-size: 1.2em;
@@ -100,7 +116,8 @@
             text-decoration: none;
             margin: 0 15px;
             font-size: 30px;
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+            animation: pulse 1.5s infinite;
         }
         .socials a:hover {
             color: #f8e5e0;
@@ -110,62 +127,42 @@
             background: rgba(43, 20, 15, 0.8);
             color: #fff;
             text-align: center;
-            padding: 30px 0;
+            padding: 30px 20px;
             margin-top: 30px;
             position: relative;
             z-index: 1;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        @keyframes slideIn {
-            from { margin-top: -50px; opacity: 0; }
-            to { margin-top: 0; opacity: 1; }
+        @keyframes zoomIn {
+            from { transform: scale(0.5); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
         }
-        @keyframes titleAnimation {
-            0% { transform: scale(0.5); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-20px); }
-            60% { transform: translateY(-10px); }
+        @keyframes bounceIn {
+            0% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); }
         }
-        .tech-icons img {
-            width: 100px;
-            height: 100px;
-            margin: 20px;
-            animation: fadeInUp 2s ease-in-out;
+        @keyframes rotateIn {
+            from { transform: rotate(-360deg); opacity: 0; }
+            to { transform: rotate(0); opacity: 1; }
         }
-        .content-section {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .content-box {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            width: 300px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease-in-out;
-        }
-        .content-box:hover {
-            transform: scale(1.05);
-        }
-        .tech-images img {
-            width: 100%;
-            border-radius: 10px;
-            transition: transform 0.3s ease-in-out;
-        }
-        .tech-images img:hover {
-            transform: scale(1.05);
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
     </style>
 </head>
