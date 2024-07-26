@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dbs</title>
+    <title>DBS</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,6 +11,7 @@
             color: #fff;
             margin: 0;
             padding: 0;
+            animation: fadeIn 2s ease-in-out;
         }
         .container {
             width: 80%;
@@ -23,6 +24,7 @@
             padding-top: 30px;
             min-height: 70px;
             border-bottom: #333 3px solid;
+            animation: slideIn 1s ease-in-out;
         }
         header a {
             color: #fff;
@@ -44,6 +46,7 @@
         }
         header #branding h1 {
             margin: 0;
+            animation: titleAnimation 1.5s ease-in-out;
         }
         footer {
             background: #333;
@@ -57,6 +60,19 @@
             text-decoration: none;
             margin: 0 10px;
             font-size: 24px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { margin-top: -50px; opacity: 0; }
+            to { margin-top: 0; opacity: 1; }
+        }
+        @keyframes titleAnimation {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
         }
     </style>
 </head>
@@ -64,7 +80,7 @@
     <header>
         <div class="container">
             <div id="branding">
-                <h1>dbs</h1>
+                <h1>DBS</h1>
             </div>
             <nav>
                 <ul>
@@ -81,13 +97,11 @@
         <p>Hi, I'm Shuhaib. Welcome to my personal webpage!</p>
         <h2>Socials</h2>
         <div class="socials">
-            <a href="https://twitter.com/yourprofile">Twitter</a>
             <a href="https://www.instagram.com/dbs_shuhaib/">Instagram</a>
-            <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
         </div>
     </section>
     <footer>
-        <p>dbs &copy; 2024</p>
+        <p>DBS &copy; 2024</p>
     </footer>
 </body>
 </html>
