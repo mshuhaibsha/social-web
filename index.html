@@ -9,11 +9,12 @@
         body, html {
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
+            overflow: hidden;
             height: 100%;
             background: linear-gradient(135deg, #3e2723, #4e342e, #6d4c41);
             color: #fff;
             font-family: 'Roboto', sans-serif;
+            position: relative;
             animation: backgroundMove 30s infinite linear;
         }
         .welcome-section {
@@ -105,8 +106,6 @@
             padding-bottom: 10px;
             margin-bottom: 20px;
             display: inline-block;
-            position: relative;
-            animation: pulse 2s infinite;
         }
         section p {
             font-size: 1.2em;
@@ -162,6 +161,20 @@
             border-radius: 20px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
         }
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            width: 50px;
+            height: 50px;
+            animation: float 10s ease-in-out infinite;
+        }
+        .floating-element:nth-child(odd) {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .floating-element:nth-child(even) {
+            background: rgba(255, 255, 255, 0.4);
+        }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -170,14 +183,14 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
         @keyframes backgroundMove {
             0% { background-position: 0% 0%; }
             100% { background-position: 100% 100%; }
+        }
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(100px, 100px); }
+            100% { transform: translate(0, 0); }
         }
     </style>
 </head>
@@ -229,6 +242,10 @@
             <p>DBS &copy; 2024</p>
         </footer>
     </div>
+    <div class="floating-element" style="top: 10%; left: 20%;"></div>
+    <div class="floating-element" style="top: 40%; left: 60%;"></div>
+    <div class="floating-element" style="top: 70%; left: 30%;"></div>
+    <div class="floating-element" style="top: 20%; left: 80%;"></div>
     <script>
         window.onload = function() {
             document.querySelector('.welcome-section').style.display = 'none';
